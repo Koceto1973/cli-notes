@@ -16,7 +16,8 @@ const cliOptions = {
     alias: 'b'
   }
 };
-
+ 
+// cli commands
 const argv = yargs
   .command('add', 'Add a new note', {
     title: cliOptions.title,
@@ -33,6 +34,7 @@ const argv = yargs
   .argv;
 var command = argv._[0];
 
+// execution routine
 if (command === 'add') {
   var note = notes.addNote(argv.title, argv.body);
   if (note) {
